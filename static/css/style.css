@@ -1,0 +1,16 @@
+html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+}
+
+/* Élément | http://127.0.0.1:8000/login/ */
+
+.navbar {
+  /* background-color: #f0f5f5; */
+  background-color: #6bd2d2 !important;
+}

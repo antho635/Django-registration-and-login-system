@@ -1,6 +1,7 @@
-{% extends "users/base.html" %}
+{% extends "test/base.html" %}
 {% block title %} Home Page {% endblock title%}
 {% block content %}
+
     <div class="jumbotron text-dark">
         <h1 class="display-4">Bienvenue, {{user.username.title|default:'invité'}}</h1>
         <p class="lead">
