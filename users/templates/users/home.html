@@ -1,8 +1,8 @@
 {% extends "users/base.html" %}
 {% block title %} Home Page {% endblock title%}
 {% block content %}
-    <div class="jumbotron text-dark">
-        <h1 class="display-4">Bienvenue, {{user.username.title|default:'invité'}}</h1>
+    <div class="jumbotron">
+        <h1 class="display-4 text text-light">Bienvenue, {{user.username.title|default:'invité'}}</h1>
         <p class="lead">
             Il s'agit d'un <b>système d'enregistrement et de connexion</b>  des utilisateurs de passGen.
             <br>
