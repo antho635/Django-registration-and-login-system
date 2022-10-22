@@ -3,14 +3,27 @@
 {% block content %}
 <style>
 td {
-  width: 100%;
+  width: 20%;
   text-align: center;
   border: solid 1px;
   padding: 20px;
 }
-.profile-tr {
-    display: flex;
-    width: 100%;
+
+.media-body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.media-body > table:nth-child(1) {
+  width: 90%;
+}
+
+.btn {
+  display: flex;
+  width: 10%;
+  justify-content: center;
+  margin: 30px auto;
 }
 
 </style>
@@ -23,7 +36,7 @@ td {
                     <div class="media-body">
                         <table>
                             <tr>
-                                <td>Id</td>
+
                                 <td>Pseudo</td>
                                 <td>Email</td>
                                 <td>Nom</td>
@@ -31,7 +44,7 @@ td {
                             </tr>
 
                             <tr  class="font-italic">
-                                <td>{{ user.id }}</td>
+
                                 <td>{{ user.username }}</td>
                                 <td>{{ user.email }}</td>
                                 <td>{{ user.first_name }}</td>
