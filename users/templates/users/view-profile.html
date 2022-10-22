@@ -1,5 +1,6 @@
 {% extends "users/base.html" %}
-{% block title %}Profile Page{% endblock title %}
+{% block title %}Page Profile{% endblock title %}
+
 {% block content %}
 <style>
 td {
@@ -35,8 +36,8 @@ td {
                 <div class="profile-tr">
                     <div class="media-body">
                         <table>
-                            <tr>
 
+                            <tr>
                                 <td>Pseudo</td>
                                 <td>Email</td>
                                 <td>Nom</td>
@@ -44,12 +45,12 @@ td {
                             </tr>
 
                             <tr  class="font-italic">
-
                                 <td>{{ user.username }}</td>
                                 <td>{{ user.email }}</td>
                                 <td>{{ user.first_name }}</td>
                                 <td>{{ user.last_name }}</td>
                             </tr>
+
                         </table>
                     </div>
                 </div>
