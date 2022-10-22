@@ -7,6 +7,7 @@ from django.views import View
 from django.contrib.auth.decorators import login_required
 
 from .forms import RegisterForm, LoginForm, UpdateUserForm, UpdateProfileForm
+from .models import Profile
 
 
 def home(request):
@@ -99,3 +100,11 @@ def profile(request):
         profile_form = UpdateProfileForm(instance=request.user.profile)
 
     return render(request, 'users/profile.html', {'user_form': user_form, 'profile_form': profile_form})
+
+
+def view_profile(request):
+    queryset = Profile.objects.all()
+    context = {
+        'queryset': queryset
+    }
+    return render(request, 'users/view-profile.html', context)
