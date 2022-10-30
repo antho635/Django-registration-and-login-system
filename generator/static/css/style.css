@@ -2,3 +2,7 @@ a {
   /* color: var(--bs-link-color); */
   color: #2cac2c;
 }
+
+.btn:nth-child(1) {
+ background: #2cac2c;
+}

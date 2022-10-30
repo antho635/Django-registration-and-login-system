@@ -12,6 +12,10 @@ from generator.models import GenPass
 def password_home(request):
 
     if request.method == "POST":
+        if query := request.POST.get('site', None):
+            results = GenPass.objects.filter(site__contains=query)
+            return render(request, 'generator/search.html', {'results': results})
+
         site = request.POST.get('site')
         user = request.user
         if site and user == "":

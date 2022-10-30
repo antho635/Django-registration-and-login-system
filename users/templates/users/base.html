@@ -8,12 +8,21 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 </head>
 <body class="bg-dark text-light">
+<style>
 
+.nav-item {
+  color: #09c1da;
+}
+
+.nav-item:hover {
+  color: #023465;
+}
+</style>
 
     <header class="header text-light" style="background: black">
         <div class="title">
             <h1 class="gg-font">
-                <a href="{% url 'password_home' %}">PassGen
+                <a class="nav-item nav-link" href="{% url 'password_home' %}">PassGen
                     <!--<img id="logo" src="" alt="logo" style="width: 10%;">-->
                 </a>
             </h1>
@@ -22,15 +31,15 @@
             <ul style="list-style: none; display: flex; justify-content: space-around; width: 100%;">
                 <li>
                     <!--<i class="fa fa-house"></i>-->
-                    <a href="{% url 'password_home' %}">Accueil</a>
+                    <a class="nav-item nav-link" href="{% url 'password_home' %}">Accueil</a>
                 </li>
 
                 <li>
-                    <a href="{% url 'listall' %}">Coffre-fort</a>
+                    <a class="nav-item nav-link" href="{% url 'listall' %}">Coffre-fort</a>
                 </li>
 
                 <li class="me-5">
-                    <a href="{% url 'search' %}">Rechercher</a>
+                    <a class="nav-item nav-link" href="{% url 'search' %}">Rechercher</a>
                 </li>
 
                 {% if user.is_authenticated %}
@@ -43,6 +52,7 @@
             </ul>
         </nav>
     </header>
+
         <!--Any flash messages pop up in any page because this is the base template-->
         {% if messages %}
           <div class="alert alert-dismissible" role="alert">
@@ -54,10 +64,9 @@
             </button>
           </div>
         {% endif %}
-        {% block content %}{% endblock %}
-      </div>
-    </div>
-  </div>
+
+        {% block content %}
+        {% endblock %}
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
