@@ -1,5 +1,4 @@
 
-
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 import random
@@ -10,14 +9,13 @@ from generator.models import GenPass
 # Create your views here.
 
 def password_home(request):
-
     if request.method == "POST":
-        if query := request.POST.get('site', None, request.POST.get('username', None)):
+        if query := request.POST.get('site', None):
             results = GenPass.objects.filter(site__contains=query)
             return render(request, 'generator/listalll.html', {'results': results})
 
         site = request.POST.get('site')
-        user = request.user
+        user = request.user.username
         if site and user == "":
             return render(request, 'generator/password-home.html')
 
