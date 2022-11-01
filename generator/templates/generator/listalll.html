@@ -219,9 +219,9 @@ h3 {
     <h1 class="text-center mt-3 mb-3">Mon coffre fort</h1>
 </div>
 
-{% for i in items %}
-    <div class="content">
 
+<div class="content">
+    {% for i in items %}
         <ul class="team">
 
             <li class="member">
@@ -230,15 +230,15 @@ h3 {
                 </div>
                 <div class="description">
                     <h3>{{ i.site }}</h3>
-                    <p class="note">Alex is a full stack developer. Alex does JavaScript development for CodePen, both front end and back, and just about everything else.
+                    <p class="note">{{ i.user }}.
                         <br>
                         <a class="deleterecord" href="{% url 'deleterecord' i.id %}/">@delete</a>
                     </p>
                 </div>
             </li>
         </ul>
-    </div>
-{% endfor %}
+    {% endfor %}
+</div>
 
 
 
