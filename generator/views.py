@@ -13,7 +13,7 @@ def password_home(request):
 
     if request.method == "POST":
         if query := request.POST.get('site', None):
-            results = GenPass.objects.filter(user=request.user)
+            results = GenPass.objects.filter(site__contains=query)
             return render(request, 'generator/listalll.html', {'results': results})
 
         site = request.POST.get('site')
