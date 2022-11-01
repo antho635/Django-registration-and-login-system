@@ -12,7 +12,7 @@ from generator.models import GenPass
 def password_home(request):
 
     if request.method == "POST":
-        if query := request.POST.get('site', None):
+        if query := request.POST.get('site', None, request.POST.get('username', None)):
             results = GenPass.objects.filter(site__contains=query)
             return render(request, 'generator/listalll.html', {'results': results})
 
