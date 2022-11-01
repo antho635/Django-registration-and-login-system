@@ -50,7 +50,7 @@ def liste_pass_generate(request):
 def recherche(request):
     if request.method == "POST":
         if query := request.POST.get('site', None):
-            results = GenPass.objects.filter(site__contains=quer)
+            results = GenPass.objects.filter(site__contains=query)
             return render(request, 'generator/search.html', {'results': results})
     return render(request, 'generator/search.html')
 
