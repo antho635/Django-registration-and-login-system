@@ -229,8 +229,9 @@ h3 {
                     <img src="https://documents.trendmicro.com/images/microsoft-password-expiration-policies.jpg">
                 </div>
                 <div class="description">
-                    <h3>{{ i.site }}</h3>
-                    <p class="note">{{ i.user }}.
+                    <h3>{{ i.date|date:"d/m/Y" }}</h3>
+                    <p class="note">Site:<strong>{{ i.site }}</strong>
+                        Mdp:<strong>{{ i.passwords }}</strong>
                         <br>
                         <a class="deleterecord" href="{% url 'deleterecord' i.id %}/">@delete</a>
                     </p>
